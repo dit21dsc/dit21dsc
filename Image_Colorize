@@ -1,0 +1,83 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/dit21dsc/dit21dsc/blob/main/Image_Colorize\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from google.colab import drive\n",
+        "drive.mount('/content/drive')"
+      ],
+      "metadata": {
+        "id": "FXrwfJVt8t6g",
+        "outputId": "3c437719-a12e-4b76-b850-f017fca2124c",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Mounted at /content/drive\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import keras\n",
+        "from keras.applications.inception_resnet_v2 import InceptionResNetV2\n",
+        "from keras.preprocessing import image \n",
+        "from tensorflow.keras.utils  import array_to_img, img_to_array, load_img\n",
+        "from keras.applications.inception_resnet_v2 import preprocess_input\n",
+        "from keras.layers import Conv2D, UpSampling2D, InputLayer, Conv2DTranspose, Input, Reshape,  concatenate\n",
+        "from keras.layers import Activation, Dense, Dropout, Flatten\n",
+        "from keras.callbacks import TensorBoard \n",
+        "from keras.models import Sequential, Model\n",
+        "from keras.layers.core import RepeatVector, Permute\n",
+        "from keras.preprocessing.image import ImageDataGenerator\n",
+        "from skimage.color import rgb2lab, lab2rgb, rgb2gray, gray2rgb\n",
+        "from skimage.transform import resize\n",
+        "from skimage.io import imsave\n",
+        "import numpy as np\n",
+        "import os\n",
+        "import random\n",
+        "import tensorflow as tf\n",
+        "import cv2\n",
+        "#OPTIMIZER\n",
+        "from tensorflow.keras.optimizers import RMSprop,Adam,Optimizer,Optimizer, SGD"
+      ],
+      "metadata": {
+        "id": "wR0n8S5S9K-4"
+      },
+      "execution_count": 2,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "collapsed_sections": [],
+      "name": "Welcome To Colaboratory",
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
